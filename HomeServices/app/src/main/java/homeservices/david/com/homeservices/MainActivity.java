@@ -1,19 +1,24 @@
 package homeservices.david.com.homeservices;
 
+
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 
 import homeservices.david.com.homeservices.adapters.ViewPagerAdapter;
+import homeservices.david.com.homeservices.fragments.MasterFragment;
 import homeservices.david.com.homeservices.fragments.ZeroFragment;
+import homeservices.david.com.homeservices.fragments.cleaning.CleaningFirstFragment;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements MasterFragment.Callback{
 
 
     private ViewPager mViewPager;
@@ -28,16 +33,13 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
 
-        mViewPager = (ViewPager) findViewById(R.id.mainViewPager);
-
-
 
 
         mFragments = new ArrayList<>();
         mFragments.add(new ZeroFragment());
-
         mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),mFragments,this);
 
+        mViewPager = (ViewPager) findViewById(R.id.mainViewPager);
         mViewPager.setAdapter(mViewPagerAdapter);
 
 
@@ -70,4 +72,56 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    @Override
+    public void onSwipeView(View v) {
+        nextView(v);
+    }
+
+    private void nextView(View v){
+
+
+        Log.d("onViewSwipe",String.valueOf(v.getId()));
+        Fragment f = getNextFragment(v.getId());
+
+        if(f == null){
+            Log.e("FRAGMENT", "NULL");
+        }
+        else{
+            Log.e("FRAGMENT", f.toString());
+        }
+        mFragments.add(f);
+        mViewPagerAdapter.notifyDataSetChanged();
+        mViewPager.setCurrentItem(mFragments.size());
+
+
+
+    }
+
+
+    private Fragment getNextFragment(int id){
+
+        switch (id){
+
+            case R.id.btZeroCleaning:
+                return new CleaningFirstFragment();
+
+        }
+
+        return null;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

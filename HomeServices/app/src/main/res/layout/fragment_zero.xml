@@ -9,7 +9,9 @@
         android:layout_weight="1"
         android:background="@color/red_zero"
         android:text="@string/zero_cleaning"
-        android:textSize="@dimen/zero_button_textsize"/>
+        android:textSize="@dimen/zero_button_textsize"
+
+        android:id="@+id/btZeroCleaning"/>
 
     <Button
         android:layout_width="match_parent"
@@ -17,7 +19,9 @@
         android:layout_weight="1"
         android:background="@color/blue_zero"
         android:text="@string/zero_maintenance"
-        android:textSize="@dimen/zero_button_textsize"/>
+        android:textSize="@dimen/zero_button_textsize"
+
+        android:id="@+id/btZeroMaintenance"/>
 
     <Button
         android:layout_width="match_parent"
@@ -25,7 +29,9 @@
         android:layout_weight="1"
         android:background="@color/green_zero"
         android:text="@string/zero_others"
-        android:textSize="@dimen/zero_button_textsize"/>
+        android:textSize="@dimen/zero_button_textsize"
+
+        android:id="@+id/btZeroOther"/>
 
 
 </LinearLayout>
