@@ -3,4 +3,12 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    
+    
+    
+    <string name="zero_maintenance">Mantenimiento</string>
+    <string name="zero_cleaning">Limpieza</string>
+    <string name="zero_others">Otros</string>
+
+
 </resources>

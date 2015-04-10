@@ -1,17 +1,52 @@
 package homeservices.david.com.homeservices;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+
+import homeservices.david.com.homeservices.adapters.ViewPagerAdapter;
+import homeservices.david.com.homeservices.fragments.ZeroFragment;
+
 
 public class MainActivity extends ActionBarActivity {
+
+
+    private ViewPager mViewPager;
+    private ViewPagerAdapter mViewPagerAdapter;
+
+    private ArrayList<Fragment> mFragments;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        mViewPager = (ViewPager) findViewById(R.id.mainViewPager);
+
+
+
+
+        mFragments = new ArrayList<>();
+        mFragments.add(new ZeroFragment());
+
+        mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),mFragments,this);
+
+        mViewPager.setAdapter(mViewPagerAdapter);
+
+
+
+
+
+
+
+
     }
 
     @Override
