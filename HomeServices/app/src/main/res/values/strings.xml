@@ -11,4 +11,14 @@
     <string name="zero_others">Otros</string>
 
 
+    <string-array name="values">
+
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+
+    </string-array>
+
+
 </resources>

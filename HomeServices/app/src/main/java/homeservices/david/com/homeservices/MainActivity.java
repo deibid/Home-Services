@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 import homeservices.david.com.homeservices.adapters.ViewPagerAdapter;
 import homeservices.david.com.homeservices.fragments.MasterFragment;
@@ -25,6 +26,8 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
     private ViewPagerAdapter mViewPagerAdapter;
 
     private ArrayList<Fragment> mFragments;
+
+
 
 
     @Override
@@ -82,8 +85,9 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
     private void nextView(View v){
 
 
-        Log.d("onViewSwipe",String.valueOf(v.getId()));
+        Log.d("onViewSwipe", String.valueOf(v.getId()));
         Fragment f = getNextFragment(v.getId());
+
 
         if(f == null){
             Log.e("FRAGMENT", "NULL");
@@ -91,9 +95,17 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
         else{
             Log.e("FRAGMENT", f.toString());
         }
-        mFragments.add(f);
-        mViewPagerAdapter.notifyDataSetChanged();
-        mViewPager.setCurrentItem(mFragments.size());
+
+        /*Verify that that page doesnt already exist*/
+        if(!compareDuplicates(f)) {
+            Log.d("FRAGMENT", "DOESNT EXISTS");
+            mFragments.add(f);
+            mViewPagerAdapter.notifyDataSetChanged();
+            mViewPager.setCurrentItem(mFragments.size()-1);
+        }
+        else{
+            mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1);
+        }
 
 
 
@@ -117,6 +129,22 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
 
 
 
+    private boolean compareDuplicates(Fragment f){
+
+
+        for(Fragment fragment: mFragments){
+            int idF = f.getId(); //for debugging
+            int idFrag = fragment.getId(); //for debugging
+
+            if(f.getClass().equals(fragment.getClass())){
+                return true;
+            }
+
+        }
+
+        return false;
+
+    }
 
 
 

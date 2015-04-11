@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.NumberPicker;
 
 import homeservices.david.com.homeservices.R;
 import homeservices.david.com.homeservices.fragments.MasterFragment;
@@ -20,6 +21,8 @@ public class CleaningFirstFragment extends MasterFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_cleaning_first,container,false);
+
+
 
 
 

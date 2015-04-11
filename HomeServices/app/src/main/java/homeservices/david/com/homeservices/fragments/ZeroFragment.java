@@ -23,6 +23,9 @@ public class ZeroFragment extends MasterFragment{
     private Button mButtonOther;
 
 
+    public ZeroFragment(){
+        this.id = MasterFragment.C_F_CODE;
+    }
 
 
 
