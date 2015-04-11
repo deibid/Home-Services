@@ -17,6 +17,7 @@ import homeservices.david.com.homeservices.adapters.ViewPagerAdapter;
 import homeservices.david.com.homeservices.fragments.MasterFragment;
 import homeservices.david.com.homeservices.fragments.ZeroFragment;
 import homeservices.david.com.homeservices.fragments.cleaning.CleaningFirstFragment;
+import homeservices.david.com.homeservices.listeners.PageListener;
 
 
 public class MainActivity extends ActionBarActivity implements MasterFragment.Callback{
@@ -25,7 +26,7 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
     private ViewPager mViewPager;
     private ViewPagerAdapter mViewPagerAdapter;
 
-    private ArrayList<Fragment> mFragments;
+    private ArrayList<MasterFragment> mFragments;
 
     private int count = 0;
 
@@ -43,10 +44,13 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
         mFragments = new ArrayList<>();
         mFragments.add(new ZeroFragment());
         count++;
+        mViewPager = (ViewPager) findViewById(R.id.mainViewPager);
         mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),mFragments,this);
 
-        mViewPager = (ViewPager) findViewById(R.id.mainViewPager);
+
         mViewPager.setAdapter(mViewPagerAdapter);
+        mViewPager.setOnPageChangeListener(new PageListener(mFragments,mViewPagerAdapter));
+
 
 
 
@@ -89,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
 
 
         Log.d("onViewSwipe", String.valueOf(v.getId()));
-        Fragment f = getNextFragment(v.getId());
+        MasterFragment f = getNextFragment(v.getId());
 
 
         if(f == null){
@@ -109,7 +113,7 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
             //mViewPager.setCurrentItem(mFragments.size()-1);
         }
         else{
-            mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1);
+            //mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1);
         }
 
 
@@ -117,7 +121,7 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
     }
 
 
-    private Fragment getNextFragment(int id){
+    private MasterFragment getNextFragment(int id){
 
         switch (id){
 

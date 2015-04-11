@@ -4,25 +4,29 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 
 import java.util.ArrayList;
+
+import homeservices.david.com.homeservices.fragments.MasterFragment;
 
 /**
  * Created by David on 10/04/15.
  */
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    ArrayList<Fragment> mFragments;
+    ArrayList<MasterFragment> mFragments;
     Context context;
 
 
-    public ViewPagerAdapter(FragmentManager fm, ArrayList<Fragment> mFragments, Context context) {
+    public ViewPagerAdapter(FragmentManager fm, ArrayList<MasterFragment> mFragments, Context context) {
         super(fm);
         this.mFragments = mFragments;
         this.context = context;
     }
 
-    public void setmFragments(ArrayList<Fragment> mFragments) {
+    public void setmFragments(ArrayList<MasterFragment> mFragments) {
         this.mFragments = mFragments;
     }
 
@@ -35,4 +39,15 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return (mFragments != null) ? mFragments.size():0;
     }
+
+    @Override
+    public int getItemPosition(Object object) {
+
+        Log.d("getItemPosition","Aqui estoy");
+        return PagerAdapter.POSITION_NONE;
+    }
+
+
+
+
 }

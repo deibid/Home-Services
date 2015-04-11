@@ -17,6 +17,11 @@ import homeservices.david.com.homeservices.fragments.MasterFragment;
 public class CleaningFirstFragment extends MasterFragment {
 
 
+    public CleaningFirstFragment() {
+
+        isMenu = false;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

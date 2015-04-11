@@ -23,17 +23,18 @@ public class ZeroFragment extends MasterFragment{
     private Button mButtonOther;
 
 
+    public ZeroFragment() {
 
+       isMenu = true;
 
-
-
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_zero,container,false);
 
-        
+
         mButtonCleaning = (Button) rootView.findViewById(R.id.btZeroCleaning);
         mButtonMaintenance = (Button) rootView.findViewById(R.id.btZeroMaintenance);
         mButtonOther = (Button) rootView.findViewById(R.id.btZeroOther);

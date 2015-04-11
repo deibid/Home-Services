@@ -28,6 +28,7 @@ public class MasterFragment extends Fragment {
         void onSwipeView(View v);
     }
 
-
-
+    public boolean isMenu() {
+        return isMenu;
+    }
 }
