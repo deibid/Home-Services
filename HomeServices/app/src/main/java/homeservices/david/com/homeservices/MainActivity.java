@@ -27,6 +27,8 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
 
     private ArrayList<Fragment> mFragments;
 
+    private int count = 0;
+
 
 
 
@@ -40,6 +42,7 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
 
         mFragments = new ArrayList<>();
         mFragments.add(new ZeroFragment());
+        count++;
         mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),mFragments,this);
 
         mViewPager = (ViewPager) findViewById(R.id.mainViewPager);
@@ -100,8 +103,10 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
         if(!compareDuplicates(f)) {
             Log.d("FRAGMENT", "DOESNT EXISTS");
             mFragments.add(f);
+            count++;
+            Log.d("Count",String.valueOf(count));
             mViewPagerAdapter.notifyDataSetChanged();
-            mViewPager.setCurrentItem(mFragments.size()-1);
+            //mViewPager.setCurrentItem(mFragments.size()-1);
         }
         else{
             mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1);

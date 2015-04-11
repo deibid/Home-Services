@@ -11,12 +11,8 @@ public class MasterFragment extends Fragment {
 
     protected Callback activity;
 
-    public static final int ZERO_CODE = 0;
-    public static final int C_F_CODE = 10;
 
-    protected int id;
-
-
+    protected boolean isMenu;
 
 
     @Override

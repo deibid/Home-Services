@@ -23,9 +23,8 @@ public class ZeroFragment extends MasterFragment{
     private Button mButtonOther;
 
 
-    public ZeroFragment(){
-        this.id = MasterFragment.C_F_CODE;
-    }
+
+
 
 
 
@@ -34,11 +33,12 @@ public class ZeroFragment extends MasterFragment{
 
         View rootView = inflater.inflate(R.layout.fragment_zero,container,false);
 
+        
         mButtonCleaning = (Button) rootView.findViewById(R.id.btZeroCleaning);
         mButtonMaintenance = (Button) rootView.findViewById(R.id.btZeroMaintenance);
         mButtonOther = (Button) rootView.findViewById(R.id.btZeroOther);
 
-        mButtonCleaning.setOnClickListener(new SwipeListener(activity));
+        mButtonCleaning.setOnTouchListener(new SwipeListener(activity));
 
 
 
