@@ -16,7 +16,8 @@ public class PageListener extends ViewPager.SimpleOnPageChangeListener {
 
     ArrayList<MasterFragment> mFragments;
     ViewPagerAdapter mAdapter;
-
+    private boolean pageChanged = false;
+    private int position;
 
     public PageListener(ArrayList<MasterFragment> mFragments,ViewPagerAdapter adapter) {
         this.mFragments = mFragments;
@@ -27,17 +28,36 @@ public class PageListener extends ViewPager.SimpleOnPageChangeListener {
     public void onPageSelected(int position) {
         super.onPageSelected(position);
 
-        Log.d("Page Listener", "Pagina-> " + String.valueOf(position));
+        pageChanged = true;
+        this.position = position;
 
-        if()
-        MasterFragment f = mFragments.get(position);
-
-        if(f.isMenu())
-            killChildren(position);
 
 
     }
 
+    @Override
+    public void onPageScrollStateChanged(int state) {
+        super.onPageScrollStateChanged(state);
+
+        switch (state){
+            case ViewPager.SCROLL_STATE_DRAGGING:
+                break;
+            case ViewPager.SCROLL_STATE_IDLE:
+                if(pageChanged) {
+                    pageChanged = false;
+                    Log.d("Page Listener", "Pagina-> " + String.valueOf(position));
+                    MasterFragment f = mFragments.get(position);
+                    if (f.isMenu())
+                        killChildren(position);
+                }
+
+                break;
+            case ViewPager.SCROLL_STATE_SETTLING:
+                break;
+        }
+
+
+    }
 
     public boolean killChildren(int from){
 
