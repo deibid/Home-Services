@@ -2,19 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@color/blue_one">
+    android:background="@color/green_one">
 
 
     <Button
         style="@style/MenuButtonStyle"
-        android:text="@string/other_maintenance_plumbing"/>
-    <Button
-        style="@style/MenuButtonStyle"
-        android:text="@string/other_maintenance_gardening"/>
+        android:text="@string/other_first_technical"/>
 
     <Button
         style="@style/MenuButtonStyle"
-        android:text="@string/other_maintenance_electric"/>
+        android:text="@string/other_first_general"/>
 
 </LinearLayout>

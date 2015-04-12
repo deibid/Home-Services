@@ -42,16 +42,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter{
     public int getCount() {
         return (mFragments != null) ? mFragments.size():0;
     }
-/*
-    @Override
-    public void destroyItem(ViewGroup container, int position, Object object) {
-        if (position >= getCount()) {
-            FragmentManager manager = ((Fragment) object).getFragmentManager();
-            FragmentTransaction trans = manager.beginTransaction();
-            trans.remove((Fragment) object);
-            trans.commit();
-        }
-    }*/
+
 
     @Override
     public int getItemPosition(Object object) {

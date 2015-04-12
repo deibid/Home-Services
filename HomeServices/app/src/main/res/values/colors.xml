@@ -9,8 +9,18 @@
     <color name="blue_five">#0D47A1</color>
     
     <color name="green_zero">#66BB6A</color>
+    <color name="green_one">#4CAF50</color>
+    <color name="green_two">#43A047</color>
+    <color name="green_three">#388E3C</color>
+    <color name="green_four">#2E7D32</color>
+    <color name="green_five">#1B5E20</color>
 
     <color name="red_zero">#EF5350</color>
+    <color name="red_one">#F44336</color>
+    <color name="red_two">#E53935</color>
+    <color name="red_three">#D32F2F</color>
+    <color name="red_four">#C62828</color>
+    <color name="red_five">#B71C1C</color>
 
     <color name="logo_background">#78909C</color>
 

@@ -18,6 +18,7 @@ import homeservices.david.com.homeservices.fragments.MasterFragment;
 import homeservices.david.com.homeservices.fragments.ZeroFragment;
 import homeservices.david.com.homeservices.fragments.cleaning.CleaningFirstFragment;
 import homeservices.david.com.homeservices.fragments.maintenance.MaintenanceMenuFragment;
+import homeservices.david.com.homeservices.fragments.other.OtherMenuFragment;
 import homeservices.david.com.homeservices.listeners.PageListener;
 
 
@@ -129,6 +130,8 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
                 return new CleaningFirstFragment();
             case R.id.btZeroMaintenance:
                 return new MaintenanceMenuFragment();
+            case R.id.btZeroOther:
+                return new OtherMenuFragment();
 
         }
 
@@ -136,17 +139,10 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
 
     }
 
-
-
-
-
     private boolean compareDuplicates(Fragment f){
 
 
         for(Fragment fragment: mFragments){
-            int idF = f.getId(); //for debugging
-            int idFrag = fragment.getId(); //for debugging
-
             if(f.getClass().equals(fragment.getClass())){
                 return true;
             }

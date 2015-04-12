@@ -11,6 +11,17 @@
     <string name="zero_others">Otros</string>
 
 
+
+    <string name="other_maintenance_plumbing">Plomería</string>
+    <string name="other_maintenance_gardening">Jardinería</string>
+    <string name="other_maintenance_electric">Electricismo</string>
+
+
+    <string name="other_first_technical">Asistencia Tecnológica</string>
+    <string name="other_first_general">Asistencia General</string>
+
+
+
     <string-array name="values">
 
         <item>1</item>

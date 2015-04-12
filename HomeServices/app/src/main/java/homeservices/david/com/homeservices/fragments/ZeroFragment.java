@@ -41,6 +41,7 @@ public class ZeroFragment extends MasterFragment{
 
         mButtonCleaning.setOnTouchListener(new SwipeListener(activity));
         mButtonMaintenance.setOnTouchListener(new SwipeListener(activity));
+        mButtonOther.setOnTouchListener(new SwipeListener(activity));
 
 
 
