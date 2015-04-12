@@ -16,6 +16,8 @@ public class SwipeListener implements View.OnTouchListener {
     float initX;
     float newX;
 
+    private boolean done = false;
+
     private static final float MIN_SWIPE_DISTANCE = 8.00f;
 
 
@@ -29,21 +31,24 @@ public class SwipeListener implements View.OnTouchListener {
     public boolean onTouch(View v, MotionEvent event) {
 
 
+        Log.d("Swipe Listener","Vista: "+v);
 
         switch (event.getAction()){
 
             case MotionEvent.ACTION_DOWN:
 
+                done = false;
                 initX = event.getX();
                 Log.d("Drag x DOWN", String.valueOf(initX));
-                //activity.onSwipeView(v);
+
                 break;
 
             case MotionEvent.ACTION_MOVE:
 
                 newX = event.getX();
-                if(moveDirection()){// a la derecha
+                if(moveDirection() && !done){// a la derecha
                     Log.d("Drag x MOVE", "IZQUIERDA");
+                    done = true;
                     activity.onSwipeView(v);
                 }
                 else Log.d("Drag x MOVE", "NADA");

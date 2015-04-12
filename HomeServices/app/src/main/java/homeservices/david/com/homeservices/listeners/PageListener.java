@@ -29,6 +29,7 @@ public class PageListener extends ViewPager.SimpleOnPageChangeListener {
 
         Log.d("Page Listener", "Pagina-> " + String.valueOf(position));
 
+        if()
         MasterFragment f = mFragments.get(position);
 
         if(f.isMenu())
@@ -40,10 +41,12 @@ public class PageListener extends ViewPager.SimpleOnPageChangeListener {
 
     public boolean killChildren(int from){
 
+        Log.d("Kill","from: "+String.valueOf(from));
 
-        for(int i = from; i<mFragments.size()-1;i++) {
+        for(int i = from+1; i<=mFragments.size()-1;i++) {
             mFragments.remove(i);
             mAdapter.setmFragments(mFragments);
+            mAdapter.notifyDataSetChanged();
             Log.d("Kill",String.valueOf(mFragments.size()));
         }
 

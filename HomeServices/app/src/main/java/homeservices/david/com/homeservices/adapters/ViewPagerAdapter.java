@@ -3,9 +3,12 @@ package homeservices.david.com.homeservices.adapters;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.PagerAdapter;
 import android.util.Log;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
@@ -14,7 +17,7 @@ import homeservices.david.com.homeservices.fragments.MasterFragment;
 /**
  * Created by David on 10/04/15.
  */
-public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+public class ViewPagerAdapter extends FragmentStatePagerAdapter{
 
     ArrayList<MasterFragment> mFragments;
     Context context;
@@ -39,6 +42,16 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return (mFragments != null) ? mFragments.size():0;
     }
+/*
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        if (position >= getCount()) {
+            FragmentManager manager = ((Fragment) object).getFragmentManager();
+            FragmentTransaction trans = manager.beginTransaction();
+            trans.remove((Fragment) object);
+            trans.commit();
+        }
+    }*/
 
     @Override
     public int getItemPosition(Object object) {

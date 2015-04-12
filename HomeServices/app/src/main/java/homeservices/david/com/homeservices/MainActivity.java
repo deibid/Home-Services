@@ -17,6 +17,7 @@ import homeservices.david.com.homeservices.adapters.ViewPagerAdapter;
 import homeservices.david.com.homeservices.fragments.MasterFragment;
 import homeservices.david.com.homeservices.fragments.ZeroFragment;
 import homeservices.david.com.homeservices.fragments.cleaning.CleaningFirstFragment;
+import homeservices.david.com.homeservices.fragments.maintenance.MaintenanceMenuFragment;
 import homeservices.david.com.homeservices.listeners.PageListener;
 
 
@@ -83,7 +84,6 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
         return super.onOptionsItemSelected(item);
     }
 
-
     @Override
     public void onSwipeView(View v) {
         nextView(v);
@@ -127,6 +127,8 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
 
             case R.id.btZeroCleaning:
                 return new CleaningFirstFragment();
+            case R.id.btZeroMaintenance:
+                return new MaintenanceMenuFragment();
 
         }
 

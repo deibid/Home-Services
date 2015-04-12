@@ -40,6 +40,7 @@ public class ZeroFragment extends MasterFragment{
         mButtonOther = (Button) rootView.findViewById(R.id.btZeroOther);
 
         mButtonCleaning.setOnTouchListener(new SwipeListener(activity));
+        mButtonMaintenance.setOnTouchListener(new SwipeListener(activity));
 
 
 
