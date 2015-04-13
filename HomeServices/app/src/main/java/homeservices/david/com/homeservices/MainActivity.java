@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -18,12 +19,15 @@ import homeservices.david.com.homeservices.fragments.MasterFragment;
 import homeservices.david.com.homeservices.fragments.ZeroFragment;
 import homeservices.david.com.homeservices.fragments.cleaning.CleaningFirstFragment;
 import homeservices.david.com.homeservices.fragments.maintenance.MaintenanceMenuFragment;
+import homeservices.david.com.homeservices.fragments.maintenance.PlumbingFirstFragment;
 import homeservices.david.com.homeservices.fragments.other.OtherMenuFragment;
 import homeservices.david.com.homeservices.listeners.PageListener;
+import homeservices.david.com.homeservices.models.IndicatorLayout;
 
 
 public class MainActivity extends ActionBarActivity implements MasterFragment.Callback{
 
+    private IndicatorLayout mIndicator;
 
     private ViewPager mViewPager;
     private ViewPagerAdapter mViewPagerAdapter;
@@ -41,6 +45,7 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
         setContentView(R.layout.activity_main);
 
 
+        mIndicator = (IndicatorLayout)findViewById(R.id.indicator);
 
 
         mFragments = new ArrayList<>();
@@ -51,7 +56,7 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
 
 
         mViewPager.setAdapter(mViewPagerAdapter);
-        mViewPager.setOnPageChangeListener(new PageListener(mFragments,mViewPagerAdapter));
+        mViewPager.setOnPageChangeListener(new PageListener(mFragments,mViewPagerAdapter,mIndicator,this));
 
 
 
@@ -93,23 +98,18 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
     private void nextView(View v){
 
 
-        Log.d("onViewSwipe", String.valueOf(v.getId()));
+
         MasterFragment f = getNextFragment(v.getId());
 
 
-        if(f == null){
-            Log.e("FRAGMENT", "NULL");
-        }
-        else{
-            Log.e("FRAGMENT", f.toString());
-        }
+
 
         /*Verify that that page doesnt already exist*/
         if(!compareDuplicates(f)) {
-            Log.d("FRAGMENT", "DOESNT EXISTS");
+            //Log.d("FRAGMENT", "DOESNT EXISTS");
             mFragments.add(f);
             count++;
-            Log.d("Count",String.valueOf(count));
+            //Log.d("Count",String.valueOf(count));
             mViewPagerAdapter.notifyDataSetChanged();
             //mViewPager.setCurrentItem(mFragments.size()-1);
         }
@@ -127,11 +127,18 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
         switch (id){
 
             case R.id.btZeroCleaning:
+                mIndicator.setPath(IndicatorLayout.PATH_RED);
                 return new CleaningFirstFragment();
             case R.id.btZeroMaintenance:
+                mIndicator.setPath(IndicatorLayout.PATH_BLUE);
                 return new MaintenanceMenuFragment();
             case R.id.btZeroOther:
+                mIndicator.setPath(IndicatorLayout.PATH_GREEN);
                 return new OtherMenuFragment();
+
+
+            case R.id.btPlumbing:
+                return new PlumbingFirstFragment();
 
         }
 

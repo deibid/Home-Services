@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:background="@color/blue_one">
+    android:gravity="center">
 
 
     <Button
+        android:id="@+id/btPlumbing"
         style="@style/MenuButtonStyle"
         android:text="@string/other_maintenance_plumbing"
         android:background="@color/blue_zero"/>

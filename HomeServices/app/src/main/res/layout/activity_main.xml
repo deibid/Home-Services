@@ -13,13 +13,25 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <homeservices.david.com.homeservices.models.IndicatorLayout
+        android:id="@+id/indicator"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@color/white">
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:weightSum="1">
 
-    </LinearLayout>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0"/>
+
+    </homeservices.david.com.homeservices.models.IndicatorLayout>
+
+
+
+
 
     <android.support.v4.view.ViewPager
         android:id="@+id/mainViewPager"

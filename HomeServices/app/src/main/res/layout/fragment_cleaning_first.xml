@@ -6,13 +6,35 @@
     android:gravity="center">
 
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="CLEANING FIRST"
-    android:textSize="40sp"
-    android:textColor="#000"/>
+    <Button
+        android:id="@+id/btCleaningRooms"
+        style="@style/MenuButtonStyle"
+        android:text="@string/cleaning_first_room"
+        android:background="@color/red_zero"/>
 
+    <Button
+        android:id="@+id/btCleaningBathrooms"
+        style="@style/MenuButtonStyle"
+        android:text="@string/cleaning_first_bathroom"
+        android:background="@color/red_one"/>
+
+    <Button
+        android:id="@+id/btCleaningClothes"
+        style="@style/MenuButtonStyle"
+        android:text="@string/cleaning_first_clothes"
+        android:background="@color/red_two"/>
+
+    <Button
+        android:id="@+id/btCleaningParty"
+        style="@style/MenuButtonStyle"
+        android:text="@string/cleaning_first_party"
+        android:background="@color/red_three"/>
+
+    <Button
+        android:id="@+id/btCleaningKitchen"
+        style="@style/MenuButtonStyle"
+        android:text="@string/cleaning_first_kitchen"
+        android:background="@color/red_four"/>
 
 
 

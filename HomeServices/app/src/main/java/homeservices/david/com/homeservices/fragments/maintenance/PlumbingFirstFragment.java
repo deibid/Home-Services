@@ -11,22 +11,23 @@ import homeservices.david.com.homeservices.fragments.MasterFragment;
 import homeservices.david.com.homeservices.listeners.SwipeListener;
 
 /**
- * Created by David on 12/04/15.
+ * Created by David on 13/04/15.
  */
-public class MaintenanceMenuFragment extends MasterFragment {
+public class PlumbingFirstFragment extends MasterFragment {
 
-    Button btPlumbing;
+    private Button btPlumbing;
 
-    public MaintenanceMenuFragment() {
-        this.isMenu = true;
+    public PlumbingFirstFragment() {
+        this.isMenu = false;
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView =  inflater.inflate(R.layout.fragment_maintenance_menu,container,false);
-        btPlumbing = (Button) rootView.findViewById(R.id.btPlumbing);
-        btPlumbing.setOnTouchListener(new SwipeListener(activity));
+        View rootView = inflater.inflate(R.layout.fragment_plumbing_first,container,false);
 
+        //btPlumbing = (Button) rootView.findViewById(R.id.btPlumbing);
+        //btPlumbing.setOnTouchListener(new SwipeListener(activity));
 
         return rootView;
     }

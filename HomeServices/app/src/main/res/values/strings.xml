@@ -22,6 +22,39 @@
 
 
 
+    <string name="cleaning_first_room">Por Habitación</string>
+    <string name="cleaning_first_bathroom">Por Baño</string>
+    <string name="cleaning_first_clothes">Ropa</string>
+    <string name="cleaning_first_party">Fiesta</string>
+    <string name="cleaning_first_kitchen">Cocina</string>
+
+    
+    <string name="room_floor">Pisos</string>
+    <string name="room_shelf">Repisas</string>
+    <string name="room_bed">Camas</string>
+    <string name="room_rug">Tapetes/Alfombras</string>
+    <string name="room_trashcan">Basureros</string>
+    
+    
+    <string name="bathroom_shower">Regadera</string>
+    <string name="bathroom_sink">Lavabo</string>
+    <string name="bathroom_floor">Piso</string>
+    <string name="bathroom_toilet">W.C</string>
+    <string name="bathroom_trashcan">Basureros</string>
+
+    
+    <string name="clothes_automatic">Lavado Automático</string>
+    <string name="clothes_byhand">Lavado a Mano</string>
+    <string name="clothes_folding">Doblado</string>
+    <string name="clothes_storing">Guardado</string>
+    
+    <string name="party_mop">Trapeado</string>
+    <string name="party_utensil">Lavado de Utencilios</string>
+    <string name="party_bathroom">Baños</string>
+    <string name="party_trashcan">Basureros</string>
+
+
+
     <string-array name="values">
 
         <item>1</item>
