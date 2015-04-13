@@ -11,11 +11,13 @@
         android:text="@string/other_maintenance_plumbing"
         android:background="@color/blue_zero"/>
     <Button
+        android:id="@+id/btGardening"
         style="@style/MenuButtonStyle"
         android:text="@string/other_maintenance_gardening"
         android:background="@color/blue_one"/>
 
     <Button
+        android:id="@+id/btElectric"
         style="@style/MenuButtonStyle"
         android:text="@string/other_maintenance_electric"
         android:background="@color/blue_two"/>

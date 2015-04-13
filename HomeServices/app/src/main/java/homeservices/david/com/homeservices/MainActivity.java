@@ -18,9 +18,13 @@ import homeservices.david.com.homeservices.adapters.ViewPagerAdapter;
 import homeservices.david.com.homeservices.fragments.MasterFragment;
 import homeservices.david.com.homeservices.fragments.ZeroFragment;
 import homeservices.david.com.homeservices.fragments.cleaning.CleaningFirstFragment;
+import homeservices.david.com.homeservices.fragments.maintenance.ElectricFirstFragment;
+import homeservices.david.com.homeservices.fragments.maintenance.GardeningFirstFragment;
 import homeservices.david.com.homeservices.fragments.maintenance.MaintenanceMenuFragment;
 import homeservices.david.com.homeservices.fragments.maintenance.PlumbingFirstFragment;
+import homeservices.david.com.homeservices.fragments.other.GeneralFirstFragment;
 import homeservices.david.com.homeservices.fragments.other.OtherMenuFragment;
+import homeservices.david.com.homeservices.fragments.other.TechnologicalFirstFragment;
 import homeservices.david.com.homeservices.listeners.PageListener;
 import homeservices.david.com.homeservices.models.IndicatorLayout;
 
@@ -136,9 +140,20 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
                 mIndicator.setPath(IndicatorLayout.PATH_GREEN);
                 return new OtherMenuFragment();
 
-
             case R.id.btPlumbing:
                 return new PlumbingFirstFragment();
+            case R.id.btGardening:
+                return new GardeningFirstFragment();
+            case R.id.btElectric:
+                return new ElectricFirstFragment();
+
+            case R.id.btTechnological:
+                return new TechnologicalFirstFragment();
+            case R.id.btGeneral:
+                return new GeneralFirstFragment();
+
+
+
 
         }
 

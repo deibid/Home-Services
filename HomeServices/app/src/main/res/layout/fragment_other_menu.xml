@@ -8,11 +8,13 @@
 
 
     <Button
+        android:id="@+id/btTechnological"
         style="@style/MenuButtonStyle"
         android:text="@string/other_first_technical"
         android:background="@color/green_one"/>
 
     <Button
+        android:id="@+id/btGeneral"
         style="@style/MenuButtonStyle"
         android:text="@string/other_first_general"
         android:background="@color/green_two"/>

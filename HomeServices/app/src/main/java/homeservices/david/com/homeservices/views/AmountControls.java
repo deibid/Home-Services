@@ -50,7 +50,7 @@ public class AmountControls extends LinearLayout implements View.OnClickListener
     @Override
     public void onClick(View v) {
 
-        Toast.makeText(context,"Click",Toast.LENGTH_SHORT).show();
+        //Toast.makeText(context,"Click",Toast.LENGTH_SHORT).show();
 
         String s = (String)tvQuantity.getText();
         int quantity = Integer.parseInt(s);
