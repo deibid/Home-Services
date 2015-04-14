@@ -18,6 +18,8 @@ import homeservices.david.com.homeservices.adapters.ViewPagerAdapter;
 import homeservices.david.com.homeservices.fragments.MasterFragment;
 import homeservices.david.com.homeservices.fragments.ZeroFragment;
 import homeservices.david.com.homeservices.fragments.cleaning.CleaningFirstFragment;
+import homeservices.david.com.homeservices.fragments.common.CommentSecondFragment;
+import homeservices.david.com.homeservices.fragments.common.ScheduleThirdFragment;
 import homeservices.david.com.homeservices.fragments.maintenance.ElectricFirstFragment;
 import homeservices.david.com.homeservices.fragments.maintenance.GardeningFirstFragment;
 import homeservices.david.com.homeservices.fragments.maintenance.MaintenanceMenuFragment;
@@ -151,6 +153,17 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
                 return new TechnologicalFirstFragment();
             case R.id.btGeneral:
                 return new GeneralFirstFragment();
+
+            case R.id.btCleaningRooms:
+            case R.id.btCleaningBathrooms:
+            case R.id.btCleaningClothes:
+            case R.id.btCleaningParty:
+            case R.id.btCleaningKitchen:
+            case R.id.cleaningMainLayout:
+                return new CommentSecondFragment();
+
+            case R.id.etComment:
+                return new ScheduleThirdFragment();
 
 
 

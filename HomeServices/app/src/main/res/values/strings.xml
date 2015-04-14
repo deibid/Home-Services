@@ -71,4 +71,9 @@
     </string-array>
 
 
+
+    <string name="comment_aditional_comments">Comentarios Adicionales</string>
+    <string name="comment_aditional_information">Da una descripción del servicio</string>
+
+
 </resources>

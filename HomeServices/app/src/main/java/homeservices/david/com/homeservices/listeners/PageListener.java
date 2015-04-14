@@ -108,15 +108,18 @@ public class PageListener extends ViewPager.SimpleOnPageChangeListener {
 
     public boolean killChildren(int from){
 
-        Log.d("Kill","from: "+String.valueOf(from));
+        Log.e("Kill","from: "+String.valueOf(from));
 
-        for(int i = from+1; i<=mFragments.size()-1;i++) {
+
+        //for(int i = from+1; i<=mFragments.size()-1;i++) {
+        for(int i = mFragments.size()-1; i>=from+1;i--) {
             mFragments.remove(i);
             mAdapter.setmFragments(mFragments);
             mAdapter.notifyDataSetChanged();
-            Log.d("Kill",String.valueOf(mFragments.size()));
+            Log.e("Kill",String.valueOf(mFragments.size()));
         }
 
+        Log.e("After Kill",String.valueOf(mFragments.size()));
         return true;
 
     }
