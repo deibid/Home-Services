@@ -88,14 +88,14 @@ public class PageListener extends ViewPager.SimpleOnPageChangeListener {
                 break;
             case ViewPager.SCROLL_STATE_IDLE:
             /*Make sure killChildren gets called after the animation ends*/
-                if(pageChanged) {
+               // if(pageChanged) {
                     pageChanged = false;
                     Log.d("Page Listener", "Pagina-> " + String.valueOf(position));
                     MasterFragment f = mFragments.get(position);
                     if (f.isMenu())
                         killChildren(position);
 
-                }
+               // }
 
 
                 break;
