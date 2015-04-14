@@ -5,6 +5,7 @@ import android.content.Context;
 import android.util.Log;
 import android.view.View;
 
+import homeservices.david.com.homeservices.MainActivity;
 import homeservices.david.com.homeservices.R;
 
 /**
@@ -21,17 +22,22 @@ public class ClickListener implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        Log.d("Click", "Clicked");
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        if(v.getId() == R.id.btSpecialistFinal) {
+            ((MainActivity) context).returnToStart();
+        }
+        else {
+            Log.d("Click", "Clicked");
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
 // 2. Chain together various setter methods to set the dialog characteristics
-        builder.setMessage("Prueba")
-                .setTitle("Prueba");
+            builder.setMessage("Prueba")
+                    .setTitle("Prueba");
 
 // 3. Get the AlertDialog from create()
-        AlertDialog dialog = builder.create();
-        dialog.show();
-
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
     }
 }

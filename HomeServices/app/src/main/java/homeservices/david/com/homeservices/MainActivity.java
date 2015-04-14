@@ -19,7 +19,9 @@ import homeservices.david.com.homeservices.fragments.MasterFragment;
 import homeservices.david.com.homeservices.fragments.ZeroFragment;
 import homeservices.david.com.homeservices.fragments.cleaning.CleaningFirstFragment;
 import homeservices.david.com.homeservices.fragments.common.CommentSecondFragment;
+import homeservices.david.com.homeservices.fragments.common.OverviewFragmentFourh;
 import homeservices.david.com.homeservices.fragments.common.ScheduleThirdFragment;
+import homeservices.david.com.homeservices.fragments.common.SpecialistFragmentFinal;
 import homeservices.david.com.homeservices.fragments.maintenance.ElectricFirstFragment;
 import homeservices.david.com.homeservices.fragments.maintenance.GardeningFirstFragment;
 import homeservices.david.com.homeservices.fragments.maintenance.MaintenanceMenuFragment;
@@ -127,6 +129,10 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
 
     }
 
+    public void returnToStart(){
+        mViewPager.setCurrentItem(0);
+    }
+
 
     private MasterFragment getNextFragment(int id){
 
@@ -165,6 +171,11 @@ public class MainActivity extends ActionBarActivity implements MasterFragment.Ca
             case R.id.etComment:
                 return new ScheduleThirdFragment();
 
+            case R.id.tvSchedule:
+                return new OverviewFragmentFourh();
+
+            case R.id.btOverview:
+                return new SpecialistFragmentFinal();
 
 
 

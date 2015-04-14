@@ -3,10 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <Button
-        android:id="@+id/tvSchedule"
+        android:id="@+id/btSpecialistFinal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Agenda"/>
+        android:text="Regresar"/>
 
 </LinearLayout>

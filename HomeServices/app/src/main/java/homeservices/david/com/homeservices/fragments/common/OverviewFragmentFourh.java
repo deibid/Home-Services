@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import homeservices.david.com.homeservices.R;
 import homeservices.david.com.homeservices.fragments.MasterFragment;
@@ -14,24 +13,23 @@ import homeservices.david.com.homeservices.listeners.SwipeListener;
 /**
  * Created by David on 14/04/15.
  */
-public class ScheduleThirdFragment extends MasterFragment {
+public class OverviewFragmentFourh extends MasterFragment {
+
+    private Button btOverview;
 
 
-    private Button tvSchedule;
-    public ScheduleThirdFragment() {
+    public OverviewFragmentFourh() {
         this.isMenu = false;
     }
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_schedule_third,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_overview_fourth,container,false);
 
 
-        tvSchedule = (Button)rootView.findViewById(R.id.tvSchedule);
-
-        tvSchedule.setOnTouchListener(new SwipeListener(activity));
-
+        btOverview = (Button)rootView.findViewById(R.id.btOverview);
+        btOverview.setOnTouchListener(new SwipeListener(activity));
 
         return rootView;
     }
